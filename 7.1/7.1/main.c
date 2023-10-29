@@ -31,8 +31,7 @@ void initializeDictionary(Dictionary *dict) {
 TreeNode* insertNode(TreeNode *node, int key, const char *value) {
     if (node == NULL) {
         return createNode(key, value);
-    }
-    
+    }    
     if (key < node->key) {
         node->left = insertNode(node->left, key, value);
     } else if (key > node->key) {
@@ -41,7 +40,6 @@ TreeNode* insertNode(TreeNode *node, int key, const char *value) {
         free(node->value);
         node->value = strdup(value);
     }
-    
     return node;
 }
 
@@ -53,7 +51,6 @@ char* searchNode(TreeNode *node, int key) {
     if (node == NULL) {
         return NULL;
     }
-    
     if (key < node->key) {
         return searchNode(node->left, key);
     } else if (key > node->key) {
@@ -71,7 +68,6 @@ int containsNode(TreeNode *node, int key) {
     if (node == NULL) {
         return 0;
     }
-    
     if (key < node->key) {
         return containsNode(node->left, key);
     } else if (key > node->key) {
@@ -89,7 +85,6 @@ TreeNode* deleteNode(TreeNode *node, int key) {
     if (node == NULL) {
         return node;
     }
-    
     if (key < node->key) {
         node->left = deleteNode(node->left, key);
     } else if (key > node->key) {
@@ -117,7 +112,6 @@ TreeNode* deleteNode(TreeNode *node, int key) {
         node->value = strdup(minRight->value);
         node->right = deleteNode(node->right, minRight->key);
     }
-    
     return node;
 }
 
@@ -142,9 +136,9 @@ void freeDictionary(Dictionary *dict) {
 int main() {
     Dictionary dict;
     initializeDictionary(&dict);
-    
-    int choice, key;
-    char value[256];
+    int choice = 0;
+    int key = 0;
+    char value[256] = { ' ' };
     
     do {
         printf("1. Добавить значение\n");
@@ -193,6 +187,6 @@ int main() {
                 printf("Некорректный выбор\n");
         }
     } while (choice != 0);
-    
     freeDictionary(&dict);
+    return 0;
 }
