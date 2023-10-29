@@ -58,8 +58,8 @@ int main() {
         return 1;
     }
 
-    char buffer[1000];
-    char search_string[100];
+    char buffer[1000] = { ' ' };
+    char search_string[100] = { ' ' };
 
     printf("Введите строку для поиска: ");
     scanf("%s", search_string);
@@ -79,6 +79,5 @@ int main() {
     if (position == -1) {
         printf("Строка '%s' не найдена в файле.\n", search_string);
     }
-
     return 0;
 }
