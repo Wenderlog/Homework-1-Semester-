@@ -6,7 +6,7 @@ int main(int argc, const char * argv[]) {
     
     for (int i = 0; i <= 9; i++) {
         for (int j = 0 ; j <= 9; j++) {
-            for (int q = 0; q<=9; q++) {
+            for (int q = 0; q <= 9; q++) {
                 int s = i + j + q;
                 if (s <= 18){
                     array[s]++;
