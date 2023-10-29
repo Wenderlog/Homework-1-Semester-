@@ -77,7 +77,9 @@ int main() {
         return 1;
     }
     
-    int n, m, k;
+    int n = 0;
+    int m = 0;
+    int k = 0;
     fscanf(input_file, "%d %d", &n, &m);
     
     Road roads[m];
