@@ -5,8 +5,8 @@
 #define MAX_ENTRIES 100
 
 struct PhoneEntry {
-    char name[50];
-    char number[20];
+    char name[50] = { ' ' };
+    char number[20] = { ' ' };
 };
 
 struct PhoneEntry phonebook[MAX_ENTRIES];
@@ -33,7 +33,7 @@ void printEntries() {
 }
 
 void findNumberByName() {
-    char searchName[50];
+    char searchName[50] = { ' ' };
     printf("Введите имя для поиска: ");
     scanf("%s", searchName);
 
@@ -52,7 +52,7 @@ void findNumberByName() {
 }
 
 void findNameByNumber() {
-    char searchNumber[20];
+    char searchNumber[20] = { ' ' };
     printf("Введите номер для поиска: ");
     scanf("%s", searchNumber);
 
@@ -95,7 +95,7 @@ int main() {
         printf("Данные загружены из файла '4.3.txt'.\n");
     }
 
-    int choice;
+    int choice = 0;
     do {
         printf("\nМеню:\n");
         printf("0 - выйти\n");
