@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct Warrior{
+struct Warrior {
     int number;
     struct Warrior* next;
 };
@@ -56,8 +56,9 @@ int findSurvivor(int n, int m) {
 }
 
 
-int main(int argc, const char * argv[]) {
-    int n, m;
+int main() {
+    int n = 0;
+    int m = 0;
     printf("Введите кол-во воинов ");
     scanf("%d", &n);
     printf("Введите кол-во убийств ");
@@ -67,7 +68,7 @@ int main(int argc, const char * argv[]) {
     
     if (survivor != -1) {
         printf("Воин под номером %d останется последним \n", survivor);
-    }else{
+    } else {
         printf("Некоректно ввели данные\n");
     }
     return 0;
