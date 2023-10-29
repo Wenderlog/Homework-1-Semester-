@@ -31,16 +31,16 @@ TreeNode* createOperationNode(char operation, TreeNode *left, TreeNode *right) {
 }
 
 TreeNode* buildExpressionTree(FILE *file) {
-    char token;
+    char token = ' ';
     fscanf(file, " %c", &token);
 
     if (isdigit(token)) {
         ungetc(token, file);
-        int number;
+        int number = 0;
         fscanf(file, "%d", &number);
         return createNumberNode(number);
     } else if (token == '(') {
-        char operation;
+        char operation = ' ';
         fscanf(file, " %c", &operation);
         TreeNode *left = buildExpressionTree(file);
         TreeNode *right = buildExpressionTree(file);
@@ -127,6 +127,5 @@ int main() {
     } else {
         printf("Ошибка: некорректное выражение.\n");
     }
-
     return 0;
 }
