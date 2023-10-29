@@ -2,7 +2,7 @@
 
 void ToBinary(int num, char binary[]) {
     int mask = 1 << 31;
-    int i;
+    int i = 0;
     for (i = 0; i < 32; i++) {
         if (num & mask) {
             binary[i] ='1';
@@ -16,7 +16,7 @@ void ToBinary(int num, char binary[]) {
 
 int binaryToDec(char binary[]) {
     int dec = 0;
-    int i;
+    int i = 0;
     for (i = 0; i < 32; i++) {
         dec <<= 1;
         if (binary[i] == '1') {
@@ -27,10 +27,10 @@ int binaryToDec(char binary[]) {
 }
 
 int main() {
-    int num1;
-    int num2;
-    char binary[33];
-    int binary2[33];
+    int num1 = 0;
+    int num2 = 0;
+    char binary[33] = { ' ' };
+    int binary2[33] = { 0 };
     
     scanf("%d", &num1);
     scanf("%d", &num2);
@@ -42,7 +42,7 @@ int main() {
     printf("Двоичное представление 2 числа %s \n", binary2);
     
     int sum = num1 + num2;
-    char binarySum[33];
+    char binarySum[33] = { ' ' };
     ToBinary(sum, binarySum);
     
     printf("Сумма в двоичном представлении %s \n", binarySum);
