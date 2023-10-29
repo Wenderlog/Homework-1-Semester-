@@ -47,7 +47,6 @@ AVLNode* rotateLeft(AVLNode *node) {
 
     updateHeight(node);
     updateHeight(newRoot);
-
     return newRoot;
 }
 
@@ -59,7 +58,6 @@ AVLNode* rotateRight(AVLNode *node) {
 
     updateHeight(node);
     updateHeight(newRoot);
-
     return newRoot;
 }
 
@@ -71,21 +69,17 @@ AVLNode* balance(AVLNode *node) {
     if (balance > 1 && getBalanceFactor(node->left) >= 0) {
         return rotateRight(node);
     }
-
     if (balance < -1 && getBalanceFactor(node->right) <= 0) {
         return rotateLeft(node);
     }
-
     if (balance > 1 && getBalanceFactor(node->left) < 0) {
         node->left = rotateLeft(node->left);
         return rotateRight(node);
     }
-
     if (balance < -1 && getBalanceFactor(node->right) > 0) {
         node->right = rotateRight(node->right);
         return rotateLeft(node);
     }
-
     return node;
 }
 
@@ -104,7 +98,6 @@ AVLNode* insert(AVLNode *root, char *key, char *value) {
         root->value = strdup(value);
         return root;
     }
-
     return balance(root);
 }
 
@@ -112,7 +105,6 @@ char* search(AVLNode *root, char *key) {
     if (root == NULL) {
         return NULL;
     }
-
     int cmp = strcmp(key, root->key);
     if (cmp < 0) {
         return search(root->left, key);
@@ -162,11 +154,9 @@ AVLNode* delete(AVLNode *root, char *key) {
             root->right = delete(root->right, minNode->key);
         }
     }
-
     if (root == NULL) {
         return root;
     }
-
     return balance(root);
 }
 
@@ -192,9 +182,9 @@ void printMenu() {
 
 int main() {
     AVLNode *root = NULL;
-    int choice;
-    char key[100];
-    char value[100];
+    int choice = 0;
+    char key[100] = { ' ' };
+    char value[100] = { ' ' };
 
     while (1) {
         printMenu();
@@ -242,6 +232,5 @@ int main() {
                 break;
         }
     }
-
     return 0;
 }
