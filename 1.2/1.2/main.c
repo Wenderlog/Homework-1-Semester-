@@ -2,7 +2,7 @@
 
 int main(int argc, const char * argv[]) {
 int lenArray = scanf("%d", &lenArray);
-int array[lenArray];
+int array[lenArray] = { 0 };
 int k = 0;
 printf("введите значения элементов массива:\n");
 for (int i = 0; i < lenArray; i++) {
