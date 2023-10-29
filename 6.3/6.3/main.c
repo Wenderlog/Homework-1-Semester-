@@ -16,7 +16,7 @@ int compareByPhoneNumber(const void* a, const void* b) {
 }
 
 void bubbleSort(struct Record* array, int len, int (*cmp)(const void*, const void*)) {
-    int swapped;
+    int swapped = 0;
     struct Record temp;
 
     do {
@@ -49,7 +49,7 @@ int main() {
 
     fclose(inputFile);
 
-    int choice;
+    int choice = 0;
     printf("Выберите способ сортировки (1 - по имени, 2 - по номеру телефона): ");
     scanf("%d", &choice);
 
@@ -68,8 +68,6 @@ int main() {
     for (int i = 0; i < count; i++) {
         printf("%s — %s\n", records[i].name, records[i].phoneNumber);
     }
-
     free(records);
-
     return 0;
 }
