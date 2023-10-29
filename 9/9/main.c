@@ -10,7 +10,7 @@ int main() {
         return 1;
     }
 
-    char buffer[100];
+    char buffer[100] = { ' ' };
     while (fscanf(file, "%99s", buffer) == 1) {
         insert(hashtable, buffer);
     }
@@ -29,6 +29,5 @@ int main() {
     printf("Средняя длина списка: %.2lf\n", avg_length);
 
     destroy_hashtable(hashtable);
-
     return 0;
 }
