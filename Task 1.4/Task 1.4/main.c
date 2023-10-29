@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
     
     long count = 0;
     
-    for (int i = 0; i <= 18; i++ ){
+    for (int i = 0; i <= 18; i++ ) {
         count+= (long)array[i] * array[i];
     }
     
