@@ -41,7 +41,7 @@ int main(int argc, const char *argv[]) {
             return 1;
         }
 
-    int len;
+    int len = 0;
     fscanf(file, "%d", &len);
     
     int *array = (int *)malloc(len * sizeof(int));
@@ -59,8 +59,6 @@ int main(int argc, const char *argv[]) {
     } else {
         printf("Наиболее встречающийся элемент в массиве - %d\n", mostElement);
     }
-
     free(array);
-
     return 0;
 }
