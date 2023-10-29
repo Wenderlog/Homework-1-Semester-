@@ -65,10 +65,10 @@ void printList(struct Node* head) {
 }
 
 
-int main(int argc, const char * argv[]) {
+int main() {
     struct Node* list = NULL;
-    int choice;
-    int value;
+    int choice = 0;
+    int value = 0;
     
     do {
         printf("Выберите операцию: \n");
