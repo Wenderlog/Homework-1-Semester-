@@ -1,0 +1,7 @@
+#include <stdio.h>
+
+int tets() {
+    // Its comment 2
+    printf("Hello, world!"); /* Its comment 2 */
+    return 0;
+}
