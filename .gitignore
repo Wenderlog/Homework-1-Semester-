@@ -1,10 +1,7 @@
 *.DS_Store
-*.xcuserstate
-=======
+
 
 ## Xcode 8 and earlier
 *.xcscmblueprint
 *.xccheckout
 *.pbxproj
-*.xcworkspacedata
-*.plist
